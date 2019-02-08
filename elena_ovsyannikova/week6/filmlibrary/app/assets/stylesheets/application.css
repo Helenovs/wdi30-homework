@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald');
+body {
+  background-color: #d4d0c3;
+}
+h1 {
+  font-family: Merriweather;
+}
+h2 {
+  font-family: Oswald;
+}
+ .form-signin {
+   width: 100%;
+   max-width: 420px;
+   padding: 15px;
+   margin: auto;
+ }
+ .feature {
+   width: 334px;
+ }
+ .container {
+   background-color: #dbf4ff;
+ }
+ .box {
+   text-align: center;
+   border-bottom: 1px solid black;
+   background-color: #cae3f9;
+   border-radius: 0.5em;
+   box-shadow: 0 0 10px black;
+   margin: 20px 0;
+ }
+ .icon {
+   width: 50px;
+ }
+ .label {
+   height: 50px;
+   text-align: center;
+   vertical-align: text-bottom;
+   font-weight: bold;
+   /* background-color: #c8deff; */
+   margin-bottom: 0;
+ }
+ .image_size {
+   margin: 0 0 10px 0;
+ }
+ .invite {
+   text-align: center;
+   margin: 10px auto;
+   padding: 10px 0 0 0;
+   background-color: #ff74ed;
+   box-shadow: 0 0 20px black;
+ }

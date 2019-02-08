@@ -1,0 +1,31 @@
+
+
+<h2><%= @movie['original_title'] %></h2>
+<div class="row">
+  <div class="col">
+    <h2><%= image_tag ("https://image.tmdb.org/t/p/w500/#{@movie['poster_path']}") %></h2>
+  </div>
+  <div class="col">
+    <p>
+      <strong>Description:</strong>
+     <%= @movie['overview'] %>
+    </p>
+
+    <p>
+      <strong>Release date:</strong> <%= @movie['release_date'] %>
+    </p>
+
+    <p>
+      <strong>Rating:</strong> <%= @movie['vote_average'] %>
+    </p>
+    <p>
+      <strong>Revenue:</strong> $<%= @movie['revenue'] %>
+    </p>
+  </div>
+</div>
+
+
+
+
+<%= button_to "Watched movie", new_film_path %>
+<%= button_to "Want to watch", new_film_path %>

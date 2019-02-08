@@ -1,0 +1,13 @@
+<h2>All Directors</h2>
+<% @directors.each do |director| %>
+<ul>
+  <li>Name: <%= link_to director.name, director %></li>
+  <li>Nationality: <%= director.nationality %></li>
+  <% if director.dob.present? %>
+  <li>Date of birth: <%= director.dob.strftime('%A, %B %e, %Y') %></li>
+  <% end %>
+</ul>
+<% if director.image.present? %>
+<%= image_tag director.image, :class => 'thumb' %>
+<% end %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2>Search results for "<%= @query %>"</h2>
+
+<ul>
+
+<% @results.each do |movie| %>
+ <li>
+   <%= image_tag ("https://image.tmdb.org/t/p/w500/#{movie['poster_path']}"), :class => "icon" %>
+   <a href="/movies/<%= movie['id'] %>">
+     <%= movie['title'] %>
+   </a>
+ </li>
+<% end %>
+</ul>

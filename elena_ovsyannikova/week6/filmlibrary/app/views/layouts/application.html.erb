@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filmlibrary</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+        <% if @current_user.present? %>
+          <%= link_to 'Home', search_path ,:class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <% if @current_user.admin? %>
+              <%= link_to 'All Users', users_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+              <%= link_to 'New film', new_film_path, :class => "nav-link"%>
+        </li>
+          <% end %>
+      <li class="nav-item">
+        <%= link_to "Sign Out #{ @current_user.name }", login_path, :method => 'delete', :class => "nav-link"%>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to 'Sign Up', new_user_path, :class => "nav-link" %>
+      </li>
+        <li class="nav-item">
+        <%= link_to 'Sign In', login_path, :class => "nav-link"%>
+        </li>
+      <% end %>
+      </ul>
+
+
+
+    </nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+
+  </body>
+</html>

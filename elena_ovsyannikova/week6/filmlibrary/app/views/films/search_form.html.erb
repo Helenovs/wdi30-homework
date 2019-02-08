@@ -1,0 +1,76 @@
+
+<div class= "invite">
+  <h1>Welcome to amazing MovieWorld</h1>
+</div>
+<div class="row">
+
+<div class="col-10">
+  <div class="box">
+  <h1>The most popular movies</h1>
+  </div>
+  <div class="row">
+    <% @info["results"].each do |movie| %>
+      <div class="col">
+        <p class="label"><%= movie["title"] %></p>
+        <a href="/movies/<%= movie['id'] %>">
+          <img class="image_size" src=<%= "https://image.tmdb.org/t/p/w200/#{movie["backdrop_path"]}" %> >
+        </a>
+      </div>
+    <% end %>
+  </div>
+  <div class="box">
+  <h1>The best movies from 2010</h1>
+  </div>
+  <div class="row">
+    <% @bestmovie["results"].each do |movie| %>
+      <div class="col">
+        <% if movie["backdrop_path"].present? %>
+          <p class="label"><%= movie["title"] %></p>
+          <a href="/movies/<%= movie['id'] %>">
+            <img class="image_size" src=<%= "https://image.tmdb.org/t/p/w200/#{movie["backdrop_path"]}" %> >
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="box">
+  <h1>The best drama released in 2018</h1>
+  </div>
+  <div class="row">
+    <% @bestdrama["results"].each do |movie| %>
+      <div class="col">
+        <% if movie["backdrop_path"].present? %>
+          <p class="label"><%= movie["title"] %></p>
+          <a href="/movies/<%= movie['id'] %>">
+            <img class="image_size" src=<%= "https://image.tmdb.org/t/p/w200/#{movie["backdrop_path"]}" %> >
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="box">
+  <h2>The most popular kids movies</h2>
+  </div>
+  <div class="row">
+    <% @bestkidsmovie["results"].each do |movie| %>
+      <div class="col">
+        <% if movie["backdrop_path"].present? %>
+          <p class="label"><%= movie["title"] %></p>
+          <a href="/movies/<%= movie['id'] %>">
+            <img class="image_size" src=<%= "https://image.tmdb.org/t/p/w200/#{movie["backdrop_path"]}" %> >
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="col-2">
+  <h4>Movie Search: </h4>
+
+  <form action="/search/results" class="form-signin">
+
+   Search Text: <input type="text" name="query" class="form-control">
+   <input type="submit" value="search" class="btn btn-primary">
+  </form>
+</div>
+</div>

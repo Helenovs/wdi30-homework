@@ -1,0 +1,13 @@
+<h2>All films</h2>
+<% @films.each do |film| %>
+  <% @genres.each do |genre| %>
+
+      <% if film.genre == genre.name  %>
+        <p><%= genre.name %></p>
+        <p><%= link_to film.title, film %></p>
+            <% if film.image.present? %>
+              <%= link_to image_tag(film.image, :class => 'thumb'), film %>
+            <% end %>
+      <% end %>
+  <% end %>
+<% end %>
